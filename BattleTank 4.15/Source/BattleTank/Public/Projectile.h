@@ -14,13 +14,18 @@ public:
 	// Sets default values for this actor's properties
 	AProjectile();
 
-protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	// Method to shoot the projectile at a set speed
+	void LaunchProjectile(float Speed);
+
+private:
+	// Set up the ability to move the projectile
+	UProjectileMovementComponent* ProjectileMovement = nullptr;
 
 	
 	
